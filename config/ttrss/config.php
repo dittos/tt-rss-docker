@@ -1,5 +1,5 @@
 <?php
-include_once "config-user.php";
+@include_once "config-user.php";
 
 if( ! defined("DB_TYPE") && getenv("DB_TYPE") !== False ){
   define('DB_TYPE', getenv("DB_TYPE"));
