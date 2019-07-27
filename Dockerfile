@@ -24,6 +24,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
         php7.0-json \
         php7.0-mbstring \
         php7.0-mysql \ 
+        php7.0-pgsql \
         php7.0-xml \
     && apt-get clean -y && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* /var/www/html/*
 
