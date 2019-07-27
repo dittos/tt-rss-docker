@@ -1,3 +1,5 @@
+# THIS REPOSITORY IS BASED ON https://gitlab.terhaak.de/jojo/tt-rss-docker
+
 # Tiny Tiny RSS Docker Deployment
 
 The docker file shipped in this repository build a single container for both the web 
