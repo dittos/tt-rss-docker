@@ -16,6 +16,9 @@ database:
   ## Database password
   password: ""
 
+  existingSecret: ""
+  existingSecretKey: ""
+
   ## Database port
   port: "3306"
 
