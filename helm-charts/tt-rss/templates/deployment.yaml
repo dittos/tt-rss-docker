@@ -87,8 +87,13 @@ spec:
           - name: DB_PASS
             valueFrom:
               secretKeyRef:
+                {{- if .Values.database.existingSecret }}
+                name: {{ .Values.database.existingSecret }}
+                key: {{ .Values.database.existingSecretKey }}
+                {{- else }}
                 name: {{ include "tt-rss.fullname" . }}
                 key: db-password
+                {{- end }}
           - name: DB_PORT
             value: "{{ .Values.database.port }}"
           - name: SELF_URL_PATH
