@@ -28,6 +28,10 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
         php7.0-xml \
     && apt-get clean -y && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* /var/www/html/*
 
+# Workaround for 2020-05-30 AddTrust External CA Root Expiration
+RUN sed 's/^mozilla\/AddTrust_External_Root.crt$/!mozilla\/AddTrust_External_Root.crt/' /etc/ca-certificates.conf && \
+    update-ca-certificates
+
 # configure apache to work with docker
 RUN mkdir -p /var/log/apache2/ /var/run/apache2/ /var/lock/apache2/ \
     && ln -sf /dev/stdout /var/log/apache2/access.log \
